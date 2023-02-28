@@ -1,4 +1,4 @@
-# CSN232_Assignment_StarveFreeRWP
+## CSN232_Assignment_StarveFreeRWP
 Assignment Submission, CSN232-Operating Systems, Pseudo Code Implementation of Starve Free Readers-Writers Problem
 
 # Global Variables and Semaphore
@@ -13,7 +13,6 @@ int count_finished_reading; //A counter which counts how many readers have compl
 
 boolean writer_on_wait; //A boolean which tells whether the writer is waiting to write or not
 ```
-
 
 
 # Initialization of semaphores and other global variables

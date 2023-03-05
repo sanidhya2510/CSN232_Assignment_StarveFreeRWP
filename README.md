@@ -17,10 +17,15 @@ boolean writer_on_wait;
 ```
 
 count_started_reading: a variable that keeps track of the number of readers that have started reading from the shared resource.
+
 count_finished_reading: a variable that keeps track of the number of readers that have finished reading from the shared resource.
+
 writer_on_wait: a boolean flag that is set to true if a writer is waiting to write to the shared resource.
+
 Read_In: a semaphore that controls access to the critical section by readers and writers. Readers and writers must acquire this semaphore before accessing the critical section.
+
 Read_Out: a semaphore that controls access to the exit section by readers and writers. Readers and writers must acquire this semaphore before exiting the critical section.
+
 Write_Now: a semaphore that is signaled by readers when they have finished reading and there are writers waiting to write to the shared resource. When signaled, the writer process can proceed to write to the shared resource.
 
 

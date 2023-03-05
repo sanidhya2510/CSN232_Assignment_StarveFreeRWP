@@ -1,9 +1,9 @@
-## CSN232_Assignment_StarveFreeRWP
+# CSN232_Assignment_StarveFreeRWP
 Assignment Submission, CSN232-Operating Systems, Pseudo Code Implementation of Starve Free Readers-Writers Problem
 
 The following pseudocode outlines the implementation of readers and writers process in the starve free readers writer problem. The problem involves multiple readers and writers accessing a shared resource, and the goal is to ensure that they do not starve. The starve-free execution of the readers-writers problem is a synchronization solution that ensures all processes have an opportunity to access the shared resource without being blocked indefinitely. In a starve-free implementation, both readers and writers are granted access to the resource in a fair and balanced manner, without any process being consistently favored over others.
 
-# Global Variables and Semaphore
+## Global Variables and Semaphore
 
 ```
 Semaphore Read_In; 
@@ -24,7 +24,7 @@ Read_Out: a semaphore that controls access to the exit section by readers and wr
 Write_Now: a semaphore that is signaled by readers when they have finished reading and there are writers waiting to write to the shared resource. When signaled, the writer process can proceed to write to the shared resource.
 
 
-# Initialization of semaphores and other global variables
+## Initialization of semaphores and other global variables
 
 ```
 Read_In = 1;
@@ -36,7 +36,7 @@ writer_on_wait = false;
 ```
 
 
-# Pseduocode Implementation for the Readers Process
+## Pseduocode Implementation for the Readers Process
 
 The following pseudocode outlines the implementation of the reader process in the starve free readers writer problem. The problem involves multiple readers and writers accessing a shared resource, and the goal is to ensure that readers do not starve, meaning that they should be able to access the resource even if there are writers waiting to write to the resource.
 
@@ -96,7 +96,7 @@ do{
 }while(1);
 ```
 
-# Pseudocode implementation for the Writers Process
+## Pseudocode implementation for the Writers Process
 
 Entry Section:
 
@@ -157,7 +157,7 @@ do{
 }while(1);
 ```
 
-#Explanation of the solution
+## Explanation of the solution
 
 Consider the example 'RRRWRW'
 

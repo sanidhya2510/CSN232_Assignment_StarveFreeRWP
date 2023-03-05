@@ -1,4 +1,4 @@
-# CSN232_Assignment_StarveFreeRWP
+# Starve Free Readers Writers Problem Solution
 Assignment Submission, CSN232-Operating Systems, Pseudo Code Implementation of Starve Free Readers-Writers Problem
 
 The following pseudocode outlines the implementation of readers and writers process in the starve free readers writer problem. The problem involves multiple readers and writers accessing a shared resource, and the goal is to ensure that they do not starve. The starve-free execution of the readers-writers problem is a synchronization solution that ensures all processes have an opportunity to access the shared resource without being blocked indefinitely. In a starve-free implementation, both readers and writers are granted access to the resource in a fair and balanced manner, without any process being consistently favored over others.

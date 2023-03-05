@@ -162,13 +162,23 @@ do{
 Consider the example 'RRRWRW'
 
 Reader 1 enters the critical section, waits for the Read_Out semaphore, increments count_started_reading and signals the Read_In semaphore. Since no writer is waiting, Reader 1 can access the critical section immediately.
+
 Reader 2 enters the critical section, waits for the Read_Out semaphore, increments count_started_reading and signals the Read_In semaphore. Since no writer is waiting, Reader 2 can access the critical section immediately.
+
 Reader 3 enters the critical section, waits for the Read_Out semaphore, increments count_started_reading and signals the Read_In semaphore. Since no writer is waiting, Reader 3 can access the critical section immediately.
-Writer 1 enters the critical section, waits for both the Read_In and Read_Out semaphores, and finds that count_started_reading is not equal to count_finished_reading. The writer sets the writer_on_wait flag to true, signals the Read_Out semaphore and waits for the Write_Now semaphore to be signaled.
+
+Writer 1 enters the critical section, waits for both the Read_In and Read_Out semaphores, and finds that count_started_reading is not equal to count_finished_reading.
+
+The writer sets the writer_on_wait flag to true, signals the Read_Out semaphore and waits for the Write_Now semaphore to be signaled.
+
 Reader 4 enters the critical section, waits for the Read_Out semaphore, increments count_started_reading and signals the Read_In semaphore. Since a writer is waiting, Reader 4 cannot access the critical section immediately and has to wait for the writer to finish writing.
+
 Writer 1 finishes writing, signals the Write_Now semaphore, sets writer_on_wait to false, and releases the Read_Out semaphore. Since Reader 4 is waiting on the Read_Out semaphore, Reader 4 can now access the critical section.
+
 Reader 4 enters the critical section, waits for the Read_Out semaphore, increments count_started_reading and signals the Read_In semaphore. Since no writer is waiting, Reader 4 can access the critical section immediately.
+
 Writer 2 enters the critical section, waits for both the Read_In and Read_Out semaphores, and finds that count_started_reading is equal to count_finished_reading. The writer signals the Read_Out semaphore to allow readers to continue reading, and proceeds to write to the shared resource.
+
 Writer 2 finishes writing, releases the Read_In semaphore, and exits the critical section.
 
 The solution ensures that writers are not starved of the resource by allowing them to wait until all readers who were reading when the writer arrived have finished before allowing the writer to write. The use of semaphores to coordinate access to the shared resource ensures that readers and writers do not interfere with each other's operations, and allows the program to execute correctly and efficiently.

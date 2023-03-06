@@ -55,7 +55,6 @@ The Read_In semaphore is then released, allowing other readers to enter.
 Critical Section:
 
 The critical section is the part of the code where the reader can read data from the shared resource.
-This section should be designed such that only one reader can access the resource at a time.
 This section is not explicitly defined in the pseudocode but should be included in the implementation.
 
 Exit Section:
